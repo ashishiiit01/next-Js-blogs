@@ -10,7 +10,7 @@ const Post = ({ post }) => {
     return (
         <Box bg="tomato" height="100vh" className={styles.container} >
 
-            <Box colSpan={1} px={40} py={40} className={styles.box} color="white" fontSize={18}>
+            <Box colSpan={1} px={20} py={40} className={styles.box} color="white" fontSize={18}>
                 <Center mb={40}>
                     <Wrap >
                         <WrapItem>
@@ -25,7 +25,8 @@ const Post = ({ post }) => {
                         </WrapItem>
                     </Wrap>
                 </Center>
-                <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+
+                <Grid templateColumns="repeat(2, 1fr)" mb={15}>
                     <Box >
                         Name :
                     </Box >
@@ -34,7 +35,7 @@ const Post = ({ post }) => {
                     </Box >
                 </Grid>
 
-                <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+                <Grid templateColumns="repeat(2, 1fr)" mb={15}>
                     <Box >
                         UserName :
                     </Box >
@@ -42,7 +43,7 @@ const Post = ({ post }) => {
                         {post.username}
                     </Box >
                 </Grid>
-                <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+                <Grid templateColumns="repeat(2, 1fr)" mb={15}>
                     <Box >
                         Email :
                     </Box >
@@ -51,7 +52,7 @@ const Post = ({ post }) => {
                     </Box >
                 </Grid>
 
-                <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+                <Grid templateColumns="repeat(2, 1fr)" mb={15}>
                     <Box >
                         Company :
                     </Box >
@@ -60,7 +61,7 @@ const Post = ({ post }) => {
                     </Box >
                 </Grid>
 
-                <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+                <Grid templateColumns="repeat(2, 1fr)" mb={15}>
                     <Box >
                         Phone :
                     </Box >

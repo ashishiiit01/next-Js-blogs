@@ -41,11 +41,7 @@ export default function Home({
         {/* POSTS  */}
         <Box px="20">
           <SimpleGrid
-            columns={[
-              2,
-              null,
-              3,
-            ]}
+            minChildWidth="240px"
             spacingX="30px"
             spacingY="30px"
           >
