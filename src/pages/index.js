@@ -29,15 +29,15 @@ export default function Home({
   } = useColorMode();
   const bg = useColorModeValue(
     colorMode ===
-      "light"
-      ? "black"
-      : "light"
+      "dark"
+      ? "light"
+      : "black"
   );
   const color = useColorModeValue(
     colorMode ===
-      "light" ?
-      "white" :
-      "gray.800"
+      "dark" ?
+      "gray.800" :
+      "white"
   );
 
   return (
