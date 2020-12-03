@@ -1,6 +1,8 @@
-import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { ChakraProvider } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  ColorModeScript,
+} from "@chakra-ui/react";
 import {
   Box,
   Grid,
@@ -10,36 +12,69 @@ import {
   Wrap,
   Avatar,
   Center,
+  useColorMode,
+  Button,
+  useColorModeValue,
 } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+
 import Link from "next/link";
 export default function Home({
   posts,
 }) {
+
+  const {
+    colorMode,
+    toggleColorMode,
+  } = useColorMode();
+  const bg = useColorModeValue(
+    colorMode ===
+      "light"
+      ? "black"
+      : "light"
+  );
+  const color = useColorModeValue(
+    colorMode ===
+      "light" ?
+      "white" :
+      "gray.800"
+  );
+
   return (
     <ChakraProvider>
-      <div>
-        <Head>
-          <title>
-            Create
-            Next App
-          </title>
-          <link
-            rel="icon"
-            href="/favicon.ico"
-          />
-        </Head>
-        {/* HEADERS */}
+      <div >
         <Box
-          bg="tomato"
           w="100%"
           p={4}
-          mb={10}
-          color="white"
+          bg={bg}
+          color={color}
+          boxShadow="1px 1px 1px -1px #888888"
+          display="flex"
+          justifyContent="space-between"
         >
-          BLOGS
+          <Box fontWeight='800'>BLOGS</Box>
+          <Box><Button
+            onClick={
+              toggleColorMode
+            }
+            color="black"
+          >
+
+            {colorMode ===
+              "light"
+              ? "Dark"
+              : "Light"}
+          </Button></Box>
+
+
+
         </Box>
+        <Box height={10} bg={bg}
+        ></Box>
         {/* POSTS  */}
-        <Box px="20">
+
+        <Box px="20" bg={bg}
+        >
           <SimpleGrid
             minChildWidth="240px"
             spacingX="30px"
@@ -103,6 +138,7 @@ export default function Home({
                           2
                         }
                         bg="papayawhip"
+                        color="black"
                         px="1"
                         py="2"
                       >
